@@ -406,7 +406,7 @@ module EventMachine
     def start_tls args={}
       ca_file, priv_key, priv_key_pwd, cert_chain, verify_peer = args.values_at(:ca_file, :private_key_file, :private_key_pwd, :cert_chain_file, :verify_peer)
 
-      [priv_key, cert_chain].each do |file|
+      [priv_key, ca_file, cert_chain].each do |file|
         next if file.nil? or file.empty?
         raise FileNotFoundException,
         "Could not find #{file} for start_tls" unless File.exists? file

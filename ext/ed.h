@@ -193,7 +193,7 @@ class ConnectionDescriptor: public EventableDescriptor
 		virtual int GetOutboundDataSize() {return OutboundDataSize;}
 
 		virtual void StartTls();
-		virtual void SetTlsParms (const char *a_filename, const char *privkey_filename, const char *privkey_pwd, const char *certchain_filename, bool verify_peer);
+		virtual void SetTlsParms (const char *ca_filename, const char *privkey_filename, const char *privkey_pwd, const char *certchain_filename, bool verify_peer);
 
 		#ifdef WITH_SSL
 		virtual X509 *GetPeerCert();
